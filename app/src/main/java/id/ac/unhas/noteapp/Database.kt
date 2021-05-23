@@ -2,6 +2,7 @@ package id.ac.unhas.noteapp
 
 import android.content.Context
 import android.provider.ContactsContract
+import androidx.lifecycle.LiveData
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -10,7 +11,22 @@ import androidx.room.RoomDatabase
 abstract class AppDatabase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
 
-    class NoteDao {
+    class NoteDao : id.ac.unhas.noteapp.NoteDao {
+        override fun getNotes(): LiveData<List<Note>> {
+            TODO("Not yet implemented")
+        }
+
+        override suspend fun insertNote(note: Note) {
+            TODO("Not yet implemented")
+        }
+
+        override suspend fun deleteNote(note: Note) {
+            TODO("Not yet implemented")
+        }
+
+        override suspend fun updateNote(note: Note) {
+            TODO("Not yet implemented")
+        }
 
     }
 
